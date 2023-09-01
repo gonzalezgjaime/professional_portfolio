@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .gradient-bg {
+        @apply bg-gradient-to-r;
+        background: linear-gradient(32deg, #1D60CC -15.05%, rgba(29, 96, 204, 0.00) 24.57%), linear-gradient(65deg, #FFF 72.04%, #195699 122.22%);
+
+    }
+}
