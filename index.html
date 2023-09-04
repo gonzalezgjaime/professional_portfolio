@@ -5,55 +5,94 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Provide fonts via g-fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!--Include icons as web fonts via font awesome-->
     <script src="https://kit.fontawesome.com/e00310bf4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="dist/output.css">
     <title>Technologist Portfolio</title>
 </head>
 
+<!--navbar section-->
+<nav id="navbar" class="flex flex-col w-screen align-middle h-32 fixed bg-neutral-200 bg-opacity-40 drop-shadow-xl px-12 items-left md:items-center md:flex-row sm:py-10 md:justify-between backdrop-blur-xl z-50">
+    <div class="flex justify-between items-center">
+        <div class="font-montserrat font-bold text-lg mt-12 sm:mt-0 lg:text-2xl text-left transform transition ease-in-out hover:scale-110 hover:-translate-y-1">
+            <a href="#landing" class="self-center">Jaime González</a>
+        </div>
 
-<nav class="w-screen fixed grid grid-cols-3 bg-neutral-200 bg-opacity-40 px-16 items-center sm:flex-row sm:py-10 align-middle backdrop-blur-xl">
-    <div class="font-montserrat font-bold text-md lg:text-2xl text-center sm:text-left">
-        <a href="#">Jaime González</a>
+        <div class="absolute inset-y-0 right-6 flex items-center md:hidden">
+            <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-800 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
     </div>
-    <div id="nav-menu" class="flex justify-center sm:ml-20">
-        <ul id="menu-items" class="flex flex-col leading-9 sm:flex-row sm:-ml-30 group">
-            <li class="px-5">
-                <a href="#" class="group-hover:text-green-800">Profile</a>
+    <div id="navMenu" class="hidden h-screen md:h-auto w-full md:w-auto md:block mt-[52px] md:mt-0 bg-neutral-200 bg-opacity-40 md:bg-opacity-0 justify-center align-middle items-center sm:mr-5 backdrop-blur-xl md:backdrop-blur-none">
+        <ul id="navLinks" class="flex flex-col space-y-4 md:space-y-0 text-center items-center leading-9 md:flex-row">
+            <li class="profile px-5">
+                <a href="#profile" class="hover:border-b-4 hover:border-b-blue-800">Profile</a>
             </li>
-            <li class="px-5">
-                <a href="#">Resume</a>
+            <li class="process px-5">
+                <a href="#process" class="hover:border-b-4 hover:border-b-blue-800">Process</a>
             </li>
-            <li class="px-5">
-                <a href="#">Projects</a>
+            <li class="resume px-5">
+                <a href="#resume" class="hover:border-b-4 hover:border-b-blue-800">Resume</a>
             </li>
-            <li class="px-5">
-                <a href="#">Contact</a>
+            <li class="projects px-5">
+                <a href="#projects" class="hover:border-b-4 hover:border-b-blue-800">Projects</a>
+            </li>
+            <li class="contact px-5">
+                <a href="#contact" class="hover:border-b-4 hover:border-b-blue-800">Contact</a>
             </li>
         </ul>
     </div>
-    <div class="text-center sm:text-right">
-        <i class="fa-brands fa-linkedin fa-2xl"></i>
+    <div class="hidden md:block">
+        <a href="www.linkedin.com/in/gonzalezjaime" target="_blank">
+            <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
     </div>
-</nav>
-<body class="gradient-bg bg-no-repeat bg-cover font-inter">
-    <main class="flex flex-col">
 
+</nav>
+<!--end of navbar section-->
+
+<!--beginning of body and content sections background gradients defined in custom.css referenced by gradient-bg class-->
+<body class="gradient-bg bg-no-repeat bg-cover font-inter">
+    <!--main section is the principal container for the content of the page-->
+    <main class="flex flex-col space-y-1">
+        <!--beginning landing section-->
         <section id="landing" class="flex w-full h-screen justify-center items-center">
-            <div class="text-xl font-bold text-justify text-gray-800 leading-1 lg:text-2xl">
+            <div id="introText" class="text-xl px-10 lg:px-0 font-bold lg:text-justify text-gray-800 leading-1 lg:text-2xl">
                 Hello, I’m Jaime <br>
                 Empowering your journey with tailored solutions, <br>
                 streamlining processes, one automation at a time.
             </div>
         </section>
+        <!--end of landing section-->
 
-        <section id="profile" class="flex h-screen">
-            <div id="profile-img" class="flex w-1/3">
+        <!--beginning of profile section-->
+        <section id="profile" class="flex h-screen bg-white">
+            <div id="profileImg" class="flex w-1/3 -translate-x-[100%] duration-300 ease-in">
                 <img src="https://picsum.photos/200/300" alt="Jaime Gonzalez" class="w-full">
             </div>
-            <div id="profile-content" class="flex flex-col w-2/3 text-gray-800 px-8 text-justify">
+            <div id="profileContent" class="flex flex-col w-2/3 text-gray-800 px-8 text-justify translate-x-[100%] duration-300 ease-in">
                 <h1 class="text-4xl font-montserrat font-bold">
                     Blending Leadership with <br/>Technical Curiosity: A Unique <br/>Trajectory
                 </h1>
@@ -96,48 +135,106 @@
                 </ol>
             </div>
         </section>
+        <!--end of profile section-->
 
-        <section id="process" class="relative grid-rows-3 pt-5">
-            <h1 class="font-montserrat text-4xl">
-                ThoughtProcess
+        <!--beginning of thought process section-->
+        <section id="process" class="grid-rows-3 h-screen space-y-8 bg-amber-100 bg-opacity-20">
+            <h1 class="font-montserrat text-4xl font-bold text-center">
+                Thought Process
             </h1>
-            <div id="timeline" class="flex flex-col items-center justify-center">
-                <div class="w-40 h-40 bg-blue-200 border-4 border-blue-800 rounded-full">
+            <div id="timeline" class="flex flex-col sm:flex-row items-center justify-center group">
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                    1
                 </div>
-                <div class="w-20 h-1 bg-blue-800"></div>
-                <div class="w-40 h-40 bg-blue-200 border-4 border-blue-800 rounded-full"></div>
-                <div class="w-20 h-1 bg-blue-800"></div>
-                <div class="w-40 h-40 bg-blue-200 border-4 border-blue-800 rounded-full">
+                <div class="w-1 h-20 sm:w-20 sm:h-1 bg-sky-800 group-hover:peer-hover:bg-blue-800"></div>
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                    2
                 </div>
-                <div class="w-20 h-1 bg-blue-800"></div>
-                <div class="w-40 h-40 bg-blue-200 border-4 border-blue-800 rounded-full"></div>
+                <div class="w-1 h-20 sm:w-20 sm:h-1 bg-sky-800"></div>
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                    3
+                </div>
+                <div class="w-1 h-20 sm:w-20 sm:h-1 bg-sky-800"></div>
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                    4
+                </div>
 
             </div>
-            <div id="timeline-detail">
+            <div id="timeline-detail" class="px-32">
                 <h2 class="text-blue-800 text-xl font-bold font-montserrat">
                     Discover
                 </h2>
-                <p class="text-gray-800 text-justify font-inter">
+                <p class="mt-3 text-gray-800 text-justify font-inter">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium adipisci alias aliquid amet aperiam asperiores atque autem blanditiis commodi consequatur consequuntur corporis cumque cupiditate delectus deleniti dicta dignissimos dolorum ducimus ea earum eius eligendi eos error esse est et eum eveniet excepturi exercitationem expedita explicabo facere fugiat fugit harum hic id illum impedit in incidunt ipsa ipsum iste itaque iure iusto labore laboriosam laborum laudantium libero magnam magni maiores maxime minima minus molestiae mollitia natus necessitatibus nemo neque nihil nisi nobis non nostrum nulla numquam obcaecati odio officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quam quasi qui quia quibusdam quisquam quod quos ratione recusandae rem repellat repellendus reprehenderit repudiandae rerum saepe sapiente sequi similique sint sit soluta sunt suscipit tempora tenetur totam ullam unde vel veniam veritatis voluptas voluptate voluptatem voluptates voluptatibus voluptatum.
                 </p>
             </div>
 
         </section>
+        <!--end of thought process section-->
 
-        <section id="resume">
+        <!--beginning resume section-->
+        <section id="resume" class="flex lg:flex-row bg-amber-600 bg-opacity-20">
+            <div id="resume-timeline" class="flex flex-col w-1/3">
+                <h1 class="text-4xl font-montserrat">Timeline</h1>
+                <h1>2022 - present</h1>
+                <h2>2018 - 2022</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+                <h2>2010 - 2018</h2>
+            </div>
+            <div id="resume-content" class="flex flex-col">
+                <h1>Entrepreneurship & Personal Projects</h1>
 
+                <h2>Gray Beard Labs, San Diego, US</h2>
+                <p>Actively expanding my development & DevOps skills through the creation of a multi-tenant SaaS web application designed to streamline operations for online shops, including those involved in physical product manufacturing.
+
+                    This involves developing key features such as:
+                    Amazon & Shopify integration for order management
+                    End-to-end operations management (from purchase orders to inventory control and production scheduling)
+                    Integrating with shipping companies for in-app label purchasing</p>
+            </div>
         </section>
+        <!--end of resume section-->
 
-        <section id="projects">
-
+        <!--beginning of projects section-->
+        <section id="projects" class="h-screen bg-white bg-opacity-50">
+            <div class="text-center mt-10">
+                <h1 class="font-montserrat font-extralight underline text-4xl leading-10">Projects</h1>
+            </div>
+            <div id="cards-container" class="flex flex-col justify-between items-center lg:flex-row">
+                <div id="card1" class="w-96 h-96 bg-white drop-shadow-lg rounded-lg">
+                    <img class="self-stretch h-40" src="https://via.placeholder.com/375x158" alt="card-img">
+                    <div>
+                        <h2 class="font-montserrat text-xl">Personal Portfolio</h2>
+                        <p class="text-justify font-inter">A holistic snapshot of my professional trajectory and milestones. It's an interactive experience of my evolution, highlighted by three live demos that breathe life into my work.</p>
+                    </div>
+                </div>
+                <div id="card2" class="w-96 h-96 bg-white drop-shadow-lg rounded-lg">
+                    <img class="self-stretch h-40" src="https://via.placeholder.com/375x158" alt="card-img">
+                </div>
+                <div id="card3" class="w-96 h-96 bg-white drop-shadow-lg rounded-lg">
+                    <img class="self-stretch h-40" src="https://via.placeholder.com/375x158" alt="card-img">
+                </div>
+            </div>
+            <!--<div class="w-96 h-96 rounded-full bg-amber-600 bg-opacity-40"></div>-->
         </section>
+        <!--end of projects section-->
 
+        <!--beginning of contact section-->
         <section id="contact">
 
         </section>
+        <!--end of contact section-->
 
     </main>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
+<!--end of body and content sections-->
+
 </html>

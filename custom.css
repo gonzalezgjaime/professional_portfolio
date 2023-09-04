@@ -9,3 +9,9 @@
 
     }
 }
+
+#introText::after {
+    content: "|";
+    @apply text-gray-800;
+    animation: blink 1s infinite;
+}
