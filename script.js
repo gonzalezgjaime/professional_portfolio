@@ -166,40 +166,197 @@ const title = document.querySelector('#resume-content #title');
 const subTitle = document.querySelector('#resume-content #subTitle');
 const content = document.querySelector('#resume-content #content');
 const resume = {
-    '2022 - present': {
+    '2022-present': {
         title: 'Entrepreneurship & personal projects',
         subTitle: 'Gray Beard Labs, San Diego',
-        content: 'Actively expanding my development & DevOps skills through the creation of a multi-tenant SaaS web application designed to streamline operations for online shops, including those involved in physical product manufacturing. This involves developing key features such as: Amazon & Shopify integration for order management End-to-end operations management (from purchase orders to inventory control and production scheduling) Integrating with shipping companies for in-app label purchasing.'
+        content: `<p class="text-md xl:text-xl">Actively expanding my development & DevOps skills through the creation of a multi-tenant SaaS web application designed to streamline operations for online shops, including those involved in physical product manufacturing. This involves developing key features such as:</p><br>
+            <ul class="list-disc list-inside indent-3 text-justify">
+                <li>
+                    Amazon & Shopify integration for order management
+                </li>
+                <li>
+                    End-to-end operations management (from purchase orders to inventory control and production scheduling)
+                </li>
+                <li>
+                    Integrating with payment processors for in-app ticket purchasing
+                </li>
+            </ul>`
     },
-    '2018 - 2022': {
-        title: 'Senior Software Engineer',
-        subTitle: 'Cubic Transportation Systems, San Diego',
-        content: 'Developed and maintained a multi-tenant SaaS web application designed to streamline operations for public transportation agencies. This involved developing key features such as: Integration with third-party systems for real-time data collection and processing. End-to-end operations management (from scheduling to fare collection and reporting). Integrating with payment processors for in-app ticket purchasing.'
+    '2018-2022': {
+        title: 'Technology Director',
+        subTitle: 'ABC Aluminum Solutions, Tijuana',
+        content: `
+        <ul class="list-inside list-disc space-y-2">
+            <li>
+                Led a team of 2 managers (IT-Ops / DevOps - ERP-Ops) & 12 Engineers across the Tech departments. Leveraging tech & business analytics to best align Initiatives.
+            </li>
+            <li>
+                Achieved 100% visibility of Tech Ops workloads / requirements, by deploying an Initiatives strategy, leveraging tools like Docker / Swarm, AWS, Git, SCRUM, Kanban, amongst others, to enable real time collaboration and visibility.
+            </li>
+            <li>
+                Achieved 80% digital transformation by deploying platforms such as: G-Suite, Salesforce, Lucidchart, Slack, Atlassian Stack (Jira, Bitbucket, JSM), ERP-EDI integrations.
+            </li>
+            <li>
+                Orchestrated network architecture, achieving 99% up-time MoM across 15 facilities throughout the Tijuana area, using Cisco Meraki cloud managed infrastructure. Full dual band WiFi coverage in all facilities (exterior / interior coverage at our campus site). Full WiFi 6 coverage at our new 500,000ft2 facility.
+            </li>
+            <li>
+                Engineered cloud infrastructure & DevOps pipelines for ABC’s in house micro-services, via Docker & Docker swarm, as well as AWS ECS & ECR, via CloudFormation or Copilot.
+            </li>
+            <li>
+                Achieved 100% code deployment automation by engineering CI/CD pipelines via Bitbucket, integrated with Docker HUB and AWS ECR.
+            </li>
+            <li>
+                Engineered a RoR REST API, that integrates ABC's Cisco Meraki dashboard with our Jira Service Management deployment, enabling real time incident management when a network or IoT device fails, aligning with ITSM best practices.
+            </li>
+            <li>
+                Design & deploy Technology strategies in alignment with CEO's vision & Organizational road map. Managed over $1m invested in tech projects.
+            </li>
+            <li>
+                Achieved 100% visibility & security control via SentinelOne & Meraki systems manager MDM, on all endpoints, mobile devices & servers.
+            </li>
+        </ul>`
     },
-    '2014 - 2018': {
-        title: 'Software Engineer 4',
-        subTitle: 'Cubic Transportation Systems, San Diego',
-        content: 'Developed and maintained a multi-tenant SaaS web application designed to streamline operations for public transportation agencies. This involved developing key features such as: Integration with third-party systems for real-time data collection and processing. End-to-end operations management (from scheduling to fare collection and reporting). Integrating with payment processors for in-app ticket purchasing.'
+    '2014-2018': {
+        title: 'Innovative Technology Manager',
+        subTitle: 'Southwest Manufacturing Services, Tijuana',
+        content: `
+        <ul class="list-inside list-disc space-y-2">
+            <li>
+                Engineered network infrastructure for our new 100,000ft2 building in LV NV. Provisioned a 1Gpbs fiber uplink, deployed network using Cisco Meraki cloud managed hardware (this on both our LV and TJ facilities)
+            </li>
+            <li>
+                Deployed a cloud based Field Service Ops platform, enabling real time data for all work orders, as well as field service Tech tracking via LTE iPads
+            </li>
+            <li>
+                Automated the Field Service invoicing process by integrating the cloud platform with an in house developed middleware, which then produced an ERP upload ready file, streamlining the sales order / invoicing process (field service value stream) automating 100% of the process.
+            </li>
+            <li>
+                During my tenure, I built and mentored a team of five engineers, successfully developing two of them into managerial roles in other Companies.
+            </li>
+            <li>
+                Designed IT-Ops/DevOps strategies aligned with the Company’s overall strategic goals.
+            </li>
+            <li>
+                Led software development operations managing several parallel projects, utilizing technologies / platforms such as Ruby on Rails, Javascript, Swift, Git, Jira, PostgreSQL, MySQL, SCRUM, Docker, Linux.
+            </li>
+            <li>
+                Served as liaison between Executives and team members establishing clear requirements, mitigating ambiguity & troubleshooting.
+            </li>
+            <li>
+                Implemented SDLC (Software Development Life Cycle), via the SCRUM methodology conducting daily stand up meetings to facilitate issue resolution and road block removal.
+            </li>
+            <li>
+                Reported results in monthly Staff meeting (Balanced Scorecard), including KPI results to CEO & Executive staff, as well as actions taken to seize improvement opportunities
+            </li>
+            <li>
+                Led digital transformation transitioning from traditional MS Office workflow to Google Apps, cutting licensing costs, enabling productivity / real-time collaboration across administrative and operation processes, also leveraging G-Script’s automation capabilities
+            </li>
+        </ul>
+            `
+
     },
-    '2013 - 2014': {
-        title: 'Software Engineer 3',
-        subTitle: 'Cubic Transportation Systems, San Diego',
-        content: 'Developed and maintained a multi-tenant SaaS web application designed to streamline operations for public transportation agencies. This involved developing key features such as: Integration with third-party systems for real-time data collection and processing. End-to-end operations management (from scheduling to fare collection and reporting). Integrating with payment processors for in-app ticket purchasing.'
+    '2013-2014': {
+        title: 'Customer Quality Engineer',
+        subTitle: 'Southwest Manufacturing Services, Tijuana',
+        content: `
+        <ul class="space-y-2 list-disc list-inside">
+            <li>
+                Responsible for direct Customer interactions regarding quality issues / events.
+            </li>
+            <li>
+                Led Root Cause analysis across the organization using tools like: 8D, PDCA, Ishikawa, 5 Why’s, A3, CAPA. Hands on involvement at production lines implementing corrective and preventive actions via Kaizen events
+            </li>
+            <li>
+                Immediate presence at Customer facilities whenever quality issues arose, or when required. (Containment, analysis, resolution & preventive action)
+            </li>
+            <li>
+                Responsible for organizing and presenting QBR meetings with Customers
+            </li>
+            <li>
+                Implemented SPC on some products to ensure tolerance levels.
+            </li>
+            <li>
+                Hosted ISO audits.
+            </li>
+            <li>
+                Responsible for supplier quality performance (SCAR’s)
+            </li>
+        </ul>`
+
     },
-    '2011 - 2012': {
-        title: 'Software Engineer 2',
-        subTitle: 'Cubic Transportation Systems, San Diego',
-        content: 'Developed and maintained a multi-tenant SaaS web application designed to streamline operations for public transportation agencies. This involved developing key features such as: Integration with third-party systems for real-time data collection and processing. End-to-end operations management (from scheduling to fare collection and reporting). Integrating with payment processors for in-app ticket purchasing.'
+    '2011-2012': {
+        title: 'Project Manager',
+        subTitle: 'Southwest Manufacturing Services, Tijuana',
+        content: `
+        <ul class="list-inside list-disc space-y-2">
+            <li>
+                Responsible for introducing potential Customer projects via the Phase Gate methodology.
+            </li>
+            <li>
+                Participated in technical reviews with both Customer and SMS Engineering Director, in order to determine product manufacturability at pre-prototype / concept stage
+            </li>
+            <li>
+                Managed scheduling for operations & resources in order to manufacture prototype units.
+            </li>
+            <li>
+                Responsible for facilitating requirements to the manufacturing Engineering team, as well as coordinating design changes with the Customer (MFG Eng Handoff)
+            </li>
+        </ul>
+        `
+
     },
-    '2010 - 2011': {
-        title: 'Software Engineer 1',
-        subTitle: 'Cubic Transportation Systems, San Diego',
-        content: 'Developed and maintained a multi-tenant SaaS web application designed to streamline operations for public transportation agencies. This involved developing key features such as: Integration with third-party systems for real-time data collection and processing. End-to-end operations management (from scheduling to fare collection and reporting). Integrating with payment processors for in-app ticket purchasing.'
+    '2010-2011': {
+        title: 'Continuous Improvement Engineer',
+        subTitle: 'Southwest Manufacturing Services, Tijuana',
+        content: `
+        <ul class="list-inside list-disc space-y-2">
+            <li>
+                Direct support to manufacturing operations
+            </li>
+            <li>
+                Fixture design.
+            </li>
+            <li>
+                Detected Customer design flaws on products and provided solutions via deviation requests and ECRs.
+            </li>
+            <li>
+                Turret Punch Press programming (CNC) via FabriWIN
+            </li>
+            <li>
+                Participated in root Cause Analysis, 8Ds.
+            </li>
+            <li>
+                Created Engineering drawings for shop floor operations, maintained revisions and document control.
+            </li>
+        </ul>
+        `
+
     },
-    '2008 - 2009': {
-        title: 'Software Engineer Intern',
-        subTitle: 'Cubic Transportation Systems, San Diego',
-        content: 'Developed and maintained a multi-tenant SaaS web application designed to streamline operations for public transportation agencies. This involved developing key features such as: Integration with third-party systems for real-time data collection and processing. End-to-end operations management (from scheduling to fare collection and reporting). Integrating with payment processors for in-app ticket purchasing.'
+    '2008-2009': {
+        title: 'IT Manager',
+        subTitle: 'DSG, Tijuana',
+        content: `
+        <ul class="list-inside list-disc space-y-2">
+            <li>
+                Responsible of IT operations.
+            </li>
+            <li>
+                Network architecture, implementation & maintenance.
+            </li>
+            <li>
+                Implemented predictive dialers to maximize call flow productivity.
+            </li>
+            <li>
+                Managed suppliers, negotiations & services.
+            </li>
+            <li>
+                Implemented Windows Server with Active Directory & Group Policy for user management and compliance.
+            </li>
+            <li>
+                Implemented Asterisk based IP PBX systems like: Trixbox, Elastix.
+            </li>
+        </ul>
+        `
     },
 }
 
@@ -209,12 +366,20 @@ function toggleExperience () {
         date.addEventListener('mouseover', function () {
             const dateString = date.innerText.trim();
             const resumeItem = resume[dateString];
-            console.log(resumeItem);
+
+            resumeTimeline.forEach((date) => {
+                const circle = date.querySelector('.circle');
+                date.classList.remove('text-blue-800', 'text-lg', 'font-bold');
+                circle.classList.remove('active');
+            });
+
+            const circle = date.querySelector('.circle');
             if (resumeItem) {
-                console.log('hello');
-                title.innerText = resumeItem.title;
-                subTitle.innerText = resumeItem.subTitle;
-                content.innerText = resumeItem.content;
+                title.innerHTML = resumeItem.title;
+                subTitle.innerHTML = resumeItem.subTitle;
+                content.innerHTML = resumeItem.content;
+                date.classList.add('text-blue-800', 'text-lg', 'font-bold');
+                circle.classList.add('active');
             }
         });
     });
@@ -227,27 +392,27 @@ const projects = document.querySelectorAll('#cards-container .card');
 const modal = document.querySelector('#modal');
 const modalTitle = document.querySelector('#modalTitle');
 const modalContent = document.querySelector('#modalContent');
-
+const modalContainer = document.querySelector('#modalContainer');
 const closeBtn = document.querySelector('#close');
 
 // create objects for project details
 const projectDetails = {
     card1: {
         title: 'Personal Portfolio',
-        detail: '',
+        detail: "Within this snapshot lies not just a linear progression of my career, but the challenges, learnings, and victories that have sculpted my professional landscape. My story is more than a timeline; it’s a living, breathing narrative. As you navigate through, you'll encounter three meticulously crafted live demos—each serving as a cornerstone moment in my professional evolution. These are not merely projects but manifestations of my skills, determination, and innovation. By interacting with them, you gain firsthand insight into the caliber of my work, the challenges I've embraced, and the results I've achieved.",
     },
     card2: {
         title: 'SaaS Mfg Ops Management',
-        detail: '',
+        detail: "Imagine the power of merging the capabilities of titans like Amazon and Shopify into a singular, cohesive tool. That's precisely what this platform offers. But its prowess isn't confined to mere integration; it’s a symphony of streamlined operations. From the granular aspects of inventory management, where each item is tracked and accounted for, to the vast realm of production processes, ensuring quality and timeliness—every step is refined. Add to this the layered complexities of order management, where every client interaction, transaction, and fulfillment process is overseen with unparalleled attention to detail. It’s not just a tool; it's an operational revolution.",
     },
     card3: {
         title: 'E-commerce Solution',
-        detail: '',
+        detail: "Welcome to an e-commerce platform that believes in harmonizing form with function. While its visual appeal captivates users with sleek, intuitive designs, the underlying technology propels them into an advanced digital marketplace. This isn't just about buying and selling; it’s about experiencing commerce in its finest form. Seamless integrations with powerhouses like Amazon and Shopify open doors to vast markets, while the platform’s proprietary features enhance user navigation, product discovery, and transaction efficiency. The end goal? To not just facilitate sales but to amplify the user's journey, making every interaction meaningful, swift, and rewarding.",
     },
 }
 // check cards for click event and render modal with appropriate details
-projects.forEach((project, i) => {
-    console.log(project);
+console.log(projects);
+projects.forEach(project => {
     project.addEventListener('click', function () {
        if (projectDetails.hasOwnProperty(project.id)) {
               const projectDetail = projectDetails[project.id];
@@ -264,4 +429,17 @@ function toggleModal(title, content) {
 
 closeBtn.addEventListener('click', function () {
     modal.classList.add('hidden');
+});
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        modal.classList.add('hidden');
+    }
+});
+
+document.addEventListener('mousedown', function (e) {
+    let clickedInside = e.composedPath().includes(modalContainer);
+    if (!clickedInside) {
+        modal.classList.add('hidden');
+    }
 });

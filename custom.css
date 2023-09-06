@@ -39,3 +39,7 @@
     @apply text-blue-800;
     @apply bg-sky-100;
 }
+
+.active {
+    @apply bg-blue-800 border border-blue-800 w-3.5 h-3.5;
+}
