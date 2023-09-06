@@ -74,9 +74,9 @@
 <!--end of navbar section-->
 
 <!--beginning of body and content sections background gradients defined in custom.css referenced by gradient-bg class-->
-<body class="gradient-bg bg-no-repeat bg-cover font-inter">
+<body class="gradient-bg bg-no-repeat bg-cover font-inter selection:bg-amber-950 selection:bg-opacity-80 selection:text-white">
     <!--main section is the principal container for the content of the page-->
-    <main class="flex flex-col space-y-1">
+    <main class="flex flex-col">
         <!--beginning landing section-->
         <section id="landing" class="flex w-full h-screen justify-center items-center">
             <div id="introText" class="text-xl px-10 lg:px-0 font-bold lg:text-justify text-gray-800 leading-1 lg:text-2xl">
@@ -92,7 +92,7 @@
             <div id="profileImg" class="flex w-1/3 -translate-x-[100%] duration-300 ease-in">
                 <img src="https://picsum.photos/200/300" alt="Jaime Gonzalez" class="w-full">
             </div>
-            <div id="profileContent" class="flex flex-col w-2/3 text-gray-800 px-8 text-justify translate-x-[100%] duration-300 ease-in">
+            <div id="profileContent" class="flex flex-col pt-10 w-2/3 text-gray-800 px-8 text-justify translate-x-[100%] duration-300 ease-in">
                 <h1 class="text-4xl font-montserrat font-bold">
                     Blending Leadership with <br/>Technical Curiosity: A Unique <br/>Trajectory
                 </h1>
@@ -138,60 +138,92 @@
         <!--end of profile section-->
 
         <!--beginning of thought process section-->
-        <section id="process" class="grid-rows-3 h-screen space-y-8 bg-amber-100 bg-opacity-20">
+        <section id="process" class="grid-rows-3 h-screen space-y-10 bg-amber-100 bg-opacity-20 pt-20 pb-40">
             <h1 class="font-montserrat text-4xl font-bold text-center">
                 Thought Process
             </h1>
+
+            <!--TODO add responsive scaling for timeline circles - lines in smaller screens -->
+
             <div id="timeline" class="flex flex-col sm:flex-row items-center justify-center group">
-                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center hover-thought circle">
                     1
                 </div>
                 <div class="w-1 h-20 sm:w-20 sm:h-1 bg-sky-800 group-hover:peer-hover:bg-blue-800"></div>
-                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center hover-thought circle">
                     2
                 </div>
                 <div class="w-1 h-20 sm:w-20 sm:h-1 bg-sky-800"></div>
-                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center hover-thought circle">
                     3
                 </div>
                 <div class="w-1 h-20 sm:w-20 sm:h-1 bg-sky-800"></div>
-                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center transform transition ease-in-out hover:scale-110 hover:translate-y-1 hover:shadow-2xl hover:border-blue-800 hover:text-blue-800 hover:bg-sky-100">
+                <div class="flex w-40 h-40 border-4 bg-amber-100 bg-opacity-20 border-sky-800 rounded-full text-center text-sky-800 font-bold text-4xl justify-center items-center hover-thought circle">
                     4
                 </div>
 
             </div>
-            <div id="timeline-detail" class="px-32">
-                <h2 class="text-blue-800 text-xl font-bold font-montserrat">
-                    Discover
-                </h2>
-                <p class="mt-3 text-gray-800 text-justify font-inter">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium adipisci alias aliquid amet aperiam asperiores atque autem blanditiis commodi consequatur consequuntur corporis cumque cupiditate delectus deleniti dicta dignissimos dolorum ducimus ea earum eius eligendi eos error esse est et eum eveniet excepturi exercitationem expedita explicabo facere fugiat fugit harum hic id illum impedit in incidunt ipsa ipsum iste itaque iure iusto labore laboriosam laborum laudantium libero magnam magni maiores maxime minima minus molestiae mollitia natus necessitatibus nemo neque nihil nisi nobis non nostrum nulla numquam obcaecati odio officia officiis omnis optio pariatur perferendis perspiciatis placeat porro possimus praesentium provident quae quam quasi qui quia quibusdam quisquam quod quos ratione recusandae rem repellat repellendus reprehenderit repudiandae rerum saepe sapiente sequi similique sint sit soluta sunt suscipit tempora tenetur totam ullam unde vel veniam veritatis voluptas voluptate voluptatem voluptates voluptatibus voluptatum.
-                </p>
+            <div id="timeline-detail" class="pt-20 px-32 flex flex-col justify-center items-center mx-auto max-w-4xl">
+                <div class="flex w-full max-w-4xl">
+                    <h2 class="text-blue-800 text-2xl font-bold font-montserrat"></h2>
+                </div>
+                <p class="mt-3 text-xl text-gray-800 text-justify font-inter"></p>
             </div>
-
         </section>
         <!--end of thought process section-->
 
         <!--beginning resume section-->
-        <section id="resume" class="flex lg:flex-row bg-amber-600 bg-opacity-20">
-            <div id="resume-timeline" class="flex flex-col w-1/3">
+        <section id="resume" class="flex h-screen lg:flex-row bg-amber-600 bg-opacity-20 py-20 justify-between">
+            <div id="resume-timeline" class="flex flex-col pl-1 w-full lg:w-1/3 items-center text-sm xl:text-xl gap-4 border-r-2 border-amber-500 overscroll-y-auto">
                 <h1 class="text-4xl font-montserrat">Timeline</h1>
-                <h1>2022 - present</h1>
-                <h2>2018 - 2022</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
-                <h2>2010 - 2018</h2>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2022-present</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2018-2022</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2014-2018</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2013-2014</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2011-2012</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2010-2011</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
+                <div class="date flex flex-row justify-between w-full group">
+                    <div class="py-5 pl-20 duration-300 ease-in-out group-hover:scale-75 lg:group-hover:scale-110 group-hover:text-3xl group-hover:text-blue-800"><h1>2008-2009</h1></div>
+                    <div class="flex items-center align-middle translate-x-1.5">
+                        <div class="w-3 5 h-3 5 bg-amber-600 rounded-full duration-300 ease-in-out group-hover:scale-100 lg:group-hover:scale-110 group-hover:bg-blue-800 group-hover:border group-hover:border-blue-800 group-hover:w-4 group-hover:h-4 group-hover:translate-x-1"></div>
+                    </div>
+                </div>
             </div>
-            <div id="resume-content" class="flex flex-col">
-                <h1>Entrepreneurship & Personal Projects</h1>
+            <div id="resume-content" class="flex flex-col mx-auto px-20">
+                <h1 id="title" class="font-montserrat text-4xl font-bold">Entrepreneurship & Personal Projects</h1>
 
-                <h2>Gray Beard Labs, San Diego, US</h2>
-                <p>Actively expanding my development & DevOps skills through the creation of a multi-tenant SaaS web application designed to streamline operations for online shops, including those involved in physical product manufacturing.
+                <h2 id="subTitle" class="text-xl xl:text-2xl font-montserrat font-bold text-blue-800 mt-5 mb-3">Gray Beard Labs, San Diego, US</h2>
+                <p id="content" class="text-md xl:text-xl">Actively expanding my development & DevOps skills through the creation of a multi-tenant SaaS web application designed to streamline operations for online shops, including those involved in physical product manufacturing.
 
                     This involves developing key features such as:
                     Amazon & Shopify integration for order management
@@ -202,35 +234,237 @@
         <!--end of resume section-->
 
         <!--beginning of projects section-->
-        <section id="projects" class="h-screen bg-white bg-opacity-50">
-            <div class="text-center mt-10">
+        <section id="projects" class="flex flex-col h-screen bg-white relative overflow-hidden">
+            <div class="absolute -top-[150px] -left-[80px] w-96 h-96 bg-yellow-700 bg-opacity-60 rounded-full"></div>
+            <div class="absolute -bottom-[100px] -left-[180px] w-[650px] h-[650px] bg-blue-700 bg-opacity-30 rounded-full"></div>
+            <div class="absolute -right-[160px] -top-[160px] w-96 h-96 bg-amber-600 bg-opacity-20 rounded-full"></div>
+            <div class="absolute -right-[165px] bottom-0  w-80 h-80 bg-blue-200 bg-opacity-60 rounded-full"></div>
+            <div class="text-center mt-20 mb-10">
                 <h1 class="font-montserrat font-extralight underline text-4xl leading-10">Projects</h1>
             </div>
-            <div id="cards-container" class="flex flex-col justify-between items-center lg:flex-row">
-                <div id="card1" class="w-96 h-96 bg-white drop-shadow-lg rounded-lg">
-                    <img class="self-stretch h-40" src="https://via.placeholder.com/375x158" alt="card-img">
-                    <div>
-                        <h2 class="font-montserrat text-xl">Personal Portfolio</h2>
-                        <p class="text-justify font-inter">A holistic snapshot of my professional trajectory and milestones. It's an interactive experience of my evolution, highlighted by three live demos that breathe life into my work.</p>
+            <div class="flex flex-col">
+                <div id="cards-container" class="flex flex-col mt-10 mx-12 gap-6 justify-center items-center lg:flex-row">
+                    <div id="card1" class="card w-80 h-full pb-5 sm:h-80 md:w-96 md:h-96 text-xs sm:text-md bg-white drop-shadow-lg rounded-lg duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:z-30 hover:drop-shadow-xl">
+                        <img class="self-stretch h-40 w-fit" src="images/coding.webp" alt="developer-portfolio-project">
+                        <div class="px-4 mt-3 mb-4">
+                            <h2 class="font-montserrat text-lg">Personal Portfolio</h2>
+                            <p class="text-justify font-inter">A holistic snapshot of my professional trajectory and milestones. It's an interactive experience of my evolution, highlighted by three live demos that breathe life into my work.</p>
+                        </div>
+                        <div class="w-full pt-2 border-t border-t-1 border-t-gray-300 flex flex-row justify-between px-4">
+                            <div class="flex flex-col justify-start w-1/2">
+                                <h3 class="text-bold font-montserrat text-md text-blue-800">Stack</h3>
+                                <div class="group flex flex-row flex-wrap text-xl space-x-2.5 mt-1.5 relative">
+                                    <i class="fa-brands fa-figma"></i>
+                                    <i class="fa-brands fa-html5"></i>
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                    <i class="fa-brands fa-js"></i>
+                                    <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 0.901855C8.06658 0.901855 6.23329 2.36815 5.49986 5.30047C6.6 3.83418 7.88336 3.28452 9.34993 3.65096C10.1868 3.86003 10.7849 4.46719 11.447 5.13899C12.5254 6.23335 13.7736 7.49992 16.5001 7.49992C19.4333 7.49992 21.2669 6.03362 22 3.10103C20.9001 4.56732 19.6168 5.11725 18.1499 4.75082C17.3133 4.54174 16.7153 3.93459 16.0531 3.26279C14.9747 2.16843 13.7263 0.901855 11 0.901855ZM5.49986 7.49992C2.56671 7.49992 0.73315 8.96622 0 11.8988C1.09986 10.4325 2.38322 9.88258 3.85007 10.2493C4.68666 10.4586 5.28473 11.0655 5.94691 11.7371C7.02531 12.8314 8.27373 14.0983 11 14.0983C13.9334 14.0983 15.7667 12.632 16.5001 9.69936C15.4 11.1657 14.1166 11.7156 12.6501 11.3489C11.8132 11.1401 11.2151 10.5327 10.553 9.86112C9.47455 8.76677 8.22641 7.49992 5.49986 7.49992Z" fill="#111928"/>
+                                    </svg>
+                                </div>
+
+
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h3 class="text-semibold font-montserrat text-sm text-blue-800"><i class="fa-solid fa-code"></i></h3>
+                                <i class="fa-brands fa-github fa-shake text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="card2" class="card w-80 h-full pb-5 sm:h-80 md:w-96 md:h-96 text-xs sm:text-md bg-white drop-shadow-lg rounded-lg duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:z-30 hover:drop-shadow-xl">
+                        <img class="self-stretch h-40 w-fit" src="images/saas-ops.jpeg" alt="saas-ops-project">
+                        <div class="px-4 mt-3 mb-4">
+                            <h2 class="font-montserrat text-lg">Personal Portfolio</h2>
+                            <p class="text-justify font-inter">A holistic snapshot of my professional trajectory and milestones. It's an interactive experience of my evolution, highlighted by three live demos that breathe life into my work.</p>
+                        </div>
+                        <div class="w-full pt-2 border-t border-t-1 border-t-gray-300 flex flex-row justify-between px-4">
+                            <div class="flex flex-col justify-start w-1/2">
+                                <h3 class="text-bold font-montserrat text-md text-blue-800">Stack</h3>
+                                <div class="group flex flex-row flex-wrap text-xl space-x-2.5 mt-1.5 relative">
+                                    <i class="fa-brands fa-figma"></i>
+                                    <i class="fa-brands fa-html5"></i>
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                    <i class="fa-brands fa-js"></i>
+                                    <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 0.901855C8.06658 0.901855 6.23329 2.36815 5.49986 5.30047C6.6 3.83418 7.88336 3.28452 9.34993 3.65096C10.1868 3.86003 10.7849 4.46719 11.447 5.13899C12.5254 6.23335 13.7736 7.49992 16.5001 7.49992C19.4333 7.49992 21.2669 6.03362 22 3.10103C20.9001 4.56732 19.6168 5.11725 18.1499 4.75082C17.3133 4.54174 16.7153 3.93459 16.0531 3.26279C14.9747 2.16843 13.7263 0.901855 11 0.901855ZM5.49986 7.49992C2.56671 7.49992 0.73315 8.96622 0 11.8988C1.09986 10.4325 2.38322 9.88258 3.85007 10.2493C4.68666 10.4586 5.28473 11.0655 5.94691 11.7371C7.02531 12.8314 8.27373 14.0983 11 14.0983C13.9334 14.0983 15.7667 12.632 16.5001 9.69936C15.4 11.1657 14.1166 11.7156 12.6501 11.3489C11.8132 11.1401 11.2151 10.5327 10.553 9.86112C9.47455 8.76677 8.22641 7.49992 5.49986 7.49992Z" fill="#111928"/>
+                                    </svg>
+                                </div>
+
+
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h3 class="text-semibold font-montserrat text-sm text-blue-800"><i class="fa-solid fa-code"></i></h3>
+                                <i class="fa-brands fa-github fa-shake text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="card3" class="card w-80 h-full pb-5 sm:h-80 md:w-96 md:h-96 text-xs sm:text-md bg-white drop-shadow-lg rounded-lg duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:z-30 hover:drop-shadow-xl">
+                        <img class="self-stretch h-40 w-fit" src="images/ecommerce2.jpeg" alt="ecommerce-project">
+                        <div class="px-4 mt-3 mb-4">
+                            <h2 class="font-montserrat text-lg">Personal Portfolio</h2>
+                            <p class="text-justify font-inter">A holistic snapshot of my professional trajectory and milestones. It's an interactive experience of my evolution, highlighted by three live demos that breathe life into my work.</p>
+                        </div>
+                        <div class="w-full pt-2 border-t border-t-1 border-t-gray-300 flex flex-row justify-between px-4">
+                            <div class="flex flex-col justify-start w-1/2">
+                                <h3 class="text-bold font-montserrat text-md text-blue-800">Stack</h3>
+                                <div class="group flex flex-row flex-wrap text-xl space-x-2.5 mt-1.5 relative">
+                                    <i class="fa-brands fa-figma"></i>
+                                    <i class="fa-brands fa-html5"></i>
+                                    <i class="fa-brands fa-css3-alt"></i>
+                                    <i class="fa-brands fa-js"></i>
+                                    <svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 0.901855C8.06658 0.901855 6.23329 2.36815 5.49986 5.30047C6.6 3.83418 7.88336 3.28452 9.34993 3.65096C10.1868 3.86003 10.7849 4.46719 11.447 5.13899C12.5254 6.23335 13.7736 7.49992 16.5001 7.49992C19.4333 7.49992 21.2669 6.03362 22 3.10103C20.9001 4.56732 19.6168 5.11725 18.1499 4.75082C17.3133 4.54174 16.7153 3.93459 16.0531 3.26279C14.9747 2.16843 13.7263 0.901855 11 0.901855ZM5.49986 7.49992C2.56671 7.49992 0.73315 8.96622 0 11.8988C1.09986 10.4325 2.38322 9.88258 3.85007 10.2493C4.68666 10.4586 5.28473 11.0655 5.94691 11.7371C7.02531 12.8314 8.27373 14.0983 11 14.0983C13.9334 14.0983 15.7667 12.632 16.5001 9.69936C15.4 11.1657 14.1166 11.7156 12.6501 11.3489C11.8132 11.1401 11.2151 10.5327 10.553 9.86112C9.47455 8.76677 8.22641 7.49992 5.49986 7.49992Z" fill="#111928"/>
+                                    </svg>
+                                </div>
+
+
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <h3 class="text-semibold font-montserrat text-sm text-blue-800"><i class="fa-solid fa-code"></i></h3>
+                                <i class="fa-brands fa-github fa-shake text-xl"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="card2" class="w-96 h-96 bg-white drop-shadow-lg rounded-lg">
-                    <img class="self-stretch h-40" src="https://via.placeholder.com/375x158" alt="card-img">
+                <!--create modal for projects detail-->
+                <div id="modal" class="hidden relative z-30" aria-labelledby="modal-headline" role="dialog" aria-modal="true">
+                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+                    <div class="fixed inset-0 z-30 w-screen overflow-y-hidden">
+                        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl">
+                                <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                                    <div class="sm:flex sm:items-start">
+                                        <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                            <h3 class="text-base font-semibold leading-6 text-gray-900" id="modalTitle">Deactivate account</h3>
+                                            <div class="mt-2 h-96 overflow-y-scroll">
+                                                <p id="modalContent" class="text-sm text-gray-500">
+                                                    Lorem ipsum dolor sit amet consectetur. Sed volutpat dignissim fermentum lectus. Porttitor facilisi lectus in cursus. Elit commodo mauris facilisis eu vitae montes. Volutpat aliquam donec commodo sed nisi erat lacus. Interdum scelerisque ut pretium dolor. Vulputate amet posuere id consectetur tempor purus tincidunt semper. Sed sagittis iaculis amet velit vel nunc. Sit tempor quis sed sollicitudin dignissim facilisis pretium ultrices urna. Ut velit rhoncus netus eros ac ut viverra.
+                                                    Porttitor massa tincidunt vitae ut. At et diam diam fames phasellus nunc pharetra netus hac. Eget ultricies dui sed pulvinar suspendisse. Tristique purus pharetra ut mi. At lacinia quis pretium placerat diam vel quam id. Etiam ultrices mi purus sed eleifend eu non laoreet pellentesque. Curabitur interdum viverra ut feugiat morbi. Sollicitudin tincidunt enim nibh nibh nulla gravida nisi tellus. Pharetra feugiat morbi sagittis mattis pellentesque velit faucibus ut.
+                                                    Urna rutrum nullam elementum volutpat tincidunt facilisi potenti vitae. Mattis felis bibendum morbi donec pretium enim. Convallis senectus nec ac libero. Libero porttitor quis purus vitae sollicitudin cursus ultricies tristique. Libero id faucibus aliquam amet. A viverra blandit in at nunc sit vehicula. Nunc amet sit ut viverra risus amet amet lectus. Quam viverra eget metus morbi et nisi. Ornare arcu aliquet morbi consectetur.
+                                                    Mattis lacus blandit sit maecenas aliquam donec purus. Blandit tortor viverra sagittis aliquet nibh aenean. Arcu sed nibh nibh vitae. Sed posuere adipiscing non fusce id scelerisque. Venenatis tincidunt ultrices quam nibh nibh erat at. Bibendum elit nulla gravida sagittis odio mauris sed. Ullamcorper mauris dignissim at morbi risus libero.
+                                                    Viverra volutpat at venenatis nec sollicitudin a. Nec cursus a odio et auctor neque accumsan convallis quis. Ligula aliquam lacinia tortor etiam vulputate. Convallis sit et in egestas faucibus eu. Facilisis nec ullamcorper integer mauris lectus vivamus egestas scelerisque. Turpis urna hac id morbi varius etiam et donec. Nunc ipsum cursus ac rhoncus. Diam quisque non turpis nunc nec risus nascetur. Viverra tellus sed nibh nullam mi congue leo vel. Scelerisque mauris sit faucibus ipsum leo. Ut metus consectetur nunc vitae commodo posuere leo. Sed ac sit amet sit. Tincidunt viverra mi cursus quam diam. Lorem ipsum dolor sit amet consectetur. Sed volutpat dignissim fermentum lectus. Porttitor facilisi lectus in cursus. Elit commodo mauris facilisis eu vitae montes. Volutpat aliquam donec commodo sed nisi erat lacus. Interdum scelerisque ut pretium dolor. Vulputate amet posuere id consectetur tempor purus tincidunt semper. Sed sagittis iaculis amet velit vel nunc. Sit tempor quis sed sollicitudin dignissim facilisis pretium ultrices urna. Ut velit rhoncus netus eros ac ut viverra.
+                                                    Porttitor massa tincidunt vitae ut. At et diam diam fames phasellus nunc pharetra netus hac. Eget ultricies dui sed pulvinar suspendisse. Tristique purus pharetra ut mi. At lacinia quis pretium placerat diam vel quam id. Etiam ultrices mi purus sed eleifend eu non laoreet pellentesque. Curabitur interdum viverra ut feugiat morbi. Sollicitudin tincidunt enim nibh nibh nulla gravida nisi tellus. Pharetra feugiat morbi sagittis mattis pellentesque velit faucibus ut.
+                                                    Urna rutrum nullam elementum volutpat tincidunt facilisi potenti vitae. Mattis felis bibendum morbi donec pretium enim. Convallis senectus nec ac libero. Libero porttitor quis purus vitae sollicitudin cursus ultricies tristique. Libero id faucibus aliquam amet. A viverra blandit in at nunc sit vehicula. Nunc amet sit ut viverra risus amet amet lectus. Quam viverra eget metus morbi et nisi. Ornare arcu aliquet morbi consectetur.
+                                                    Mattis lacus blandit sit maecenas aliquam donec purus. Blandit tortor viverra sagittis aliquet nibh aenean. Arcu sed nibh nibh vitae. Sed posuere adipiscing non fusce id scele
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                                    <button id="close" type="button" class="inline-flex w-full justify-center rounded-md bg-blue-800 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 sm:ml-3 sm:w-auto">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="card3" class="w-96 h-96 bg-white drop-shadow-lg rounded-lg">
-                    <img class="self-stretch h-40" src="https://via.placeholder.com/375x158" alt="card-img">
+                <div class="flex flex-col justify-start w-fit items-start gap-2 border border-sky-800 mt-20 mx-20 px-4 py-5 bg-blue-200 bg-opacity-100 text-gray-800 rounded-md font-bold text-md z-10">
+                    <div class="flex flex-row items-center text-start gap-x-3">
+                        <i class="fa-solid fa-check-circle"></i>
+                        <h3 class="text-gray-800 text-xl font-semibold leading-loose">
+                            Live Projects
+                        </h3>
+                    </div>
+                    <div class="flex flex-row items-center text-start font-normal">
+                        <div>
+                            Each project you see here is live and <span class="text-blue-700 text-lg font-bold leading-relaxed">fully operational</span>. My aim? Show you how I transform customer needs into organized, tangible results that resonate with their vision and workflow.
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <!--<div class="w-96 h-96 rounded-full bg-amber-600 bg-opacity-40"></div>-->
         </section>
         <!--end of projects section-->
 
         <!--beginning of contact section-->
-        <section id="contact">
+        <section id="contact" class="bg-white bg-opacity-50 z-0">
+            <div class="mt-20 flex flex-col justify-start items-center gap-8 h-screen mx-5 sm:mx-7 md:mx-10 lg:mx-40 xl:mx-96">
+                <div class="flex flex-col justify-start items-start">
+                    <h1 class="text-gray-800 font-bold font-montserrat text-4xl text-center mb-10">Let's Collaborate!</h1>
+                    <p class="text-gray-800 font-inter text-xl font-normal w-fit">
+                        Whether you need a <span class="text-blue-800 ">tailored software solution</span> <span class="text-blue-800 font-bold">strategic consultation</span>, or are scouting <span class="text-blue-800 font-bold">talent for your company</span>, I'm here to help. Reach out, and let's start a conversation.
+                    </p>
+                </div>
+                <div id="form-container" class="flex flex-row align-baseline mt-10 space-y-12">
+                    <form action="script.js" class="flex flex-col justify-between">
+                        <div class="flex flex-row gap-x-10">
+                            <div class="flex flex-col gap-y-4 my-5">
+                                <div class="flex flex-col">
+                                    <label for="fullName" class="block text-sm font-medium leading-6 text-gray-900">Full Name</label>
+                                    <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 bg-white focus-within:ring-inset focus-within:ring-blue-700 sm:max-w-md">
+                                        <input type="text" name="fullName" id="fullName" placeholder="" class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-blue-800 focus:ring-0 sm:text-sm sm:leading-6"/>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                                    <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 bg-white focus-within:ring-inset focus-within:ring-blue-700 sm:max-w-md">
+                                        <input type="text" name="email" id="email" placeholder="" class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-blue-800 focus:ring-0 sm:text-sm sm:leading-6"/>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label for="phoneNumber" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
+                                    <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 bg-white focus-within:ring-inset focus-within:ring-blue-700 sm:max-w-md">
+                                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="" class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-blue-800 focus:ring-0 sm:text-sm sm:leading-6"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="h-full border border-gray-300"></div>
+                            <div class="flex flex-col gap-4 mt-10">
+                                <div class="flex items-center gap-x-3 radio-option">
+                                    <input type="radio" name="contactReason" id="contactReason1" value="softwareSolution" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
+                                    <label for="contactReason1" class="block text-sm font-medium leading-6 text-gray-900">Software Solution</label>
+                                </div>
+                                <span class="text-xs text-gray-500 font-normal leading-none indent-7">Custom software or tech solutions</span>
+                                <div class="flex items-center gap-x-3 radio-option">
+                                    <input type="radio" name="contactReason" id="contactReason2" value="consultingService" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
+                                    <label for="contactReason2" class="block text-sm font-medium leading-6 text-gray-900">Consulting service</label>
+                                </div>
+                                <span class="text-xs text-gray-500 font-normal leading-none indent-7">Consulting service for projects or businesses</span>
+                                <div class="flex items-center gap-x-3 radio-option">
+                                    <input type="radio" name="contactReason" id="contactReason3" value="otherReason" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
+                                    <label for="contactReason3" class="block text-sm font-medium leading-6 text-gray-900">Other reasons</label>
+                                </div>
+                                <span class="text-xs text-gray-500 font-normal leading-none indent-7">Other reasons for contact</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col w-full">
+                            <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Message</label>
+                            <div class="flex h-full rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 bg-white focus-within:ring-inset focus-within:ring-blue-700">
+                                <textarea type="text" name="message" id="message" placeholder="" rows="5" class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-blue-800 focus:ring-0 sm:text-sm sm:leading-6"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="mt-5 flex items-center justify-end gap-x-6">
+                            <button class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                            <button class="rounded-md bg-blue-800 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-60">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
 
         </section>
         <!--end of contact section-->
 
+        <!--beginning of footer section-->
+        <footer class="flex flex-col h-40 bg-amber-900 bg-opacity-50">
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-row justify-center items-center">
+                    <a href="www.linkedin.com/in/gonzalezjaime" target="_blank">
+                        <i class="fa-brands fa-linkedin fa-2x"></i>
+                    </a>
+                </div>
+                <div class="flex flex-row justify-center items-center">
+                    <a href="">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <script defer src="script.js"></script>

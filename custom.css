@@ -15,3 +15,27 @@
     @apply text-gray-800;
     animation: blink 1s infinite;
 }
+
+.hover-thought {
+    @apply transform;
+    @apply transition;
+    @apply ease-in-out;
+    @apply hover:scale-110;
+    @apply hover:translate-y-1;
+    @apply hover:shadow-2xl;
+    @apply hover:border-blue-800;
+    @apply hover:text-blue-800;
+    @apply hover:bg-sky-100;
+}
+
+.active-thought {
+    @apply transform;
+    @apply transition;
+    @apply ease-in-out;
+    @apply scale-110;
+    @apply translate-y-1;
+    @apply shadow-2xl;
+    @apply border-blue-800;
+    @apply text-blue-800;
+    @apply bg-sky-100;
+}

@@ -8,5 +8,9 @@ module.exports = {
       'inter': ['Inter', 'sans-serif'],
     },
   },
-  plugins: [],
+  plugins: [
+      require('@tailwindcss/forms')({
+        strategy: 'base',
+      }),
+  ],
 }
