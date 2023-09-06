@@ -24,6 +24,7 @@ const sections = document.querySelectorAll('section');
 navLinks.forEach((link, i) => {
     link.addEventListener('click', function () {
         activeMenu(i);
+        mobileMenu.classList.toggle('hidden');
     });
 });
 
@@ -61,6 +62,8 @@ const mobileMenu = document.querySelector('#navMenu');
 const button = document.querySelector('button');
 button.addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+    mobileMenu.classList.toggle('flex-col');
     // change mobile menu icon on click
     button.children[2].classList.toggle('hidden');
     button.children[3].classList.toggle('hidden');

@@ -16,8 +16,8 @@
 </head>
 
 <!--navbar section-->
-<nav id="navbar" class="flex flex-col w-screen align-middle h-32 fixed bg-neutral-200 bg-opacity-40 drop-shadow-xl px-12 items-left md:items-center md:flex-row sm:py-10 md:justify-between backdrop-blur-xl z-50">
-    <div class="flex justify-between items-center">
+<nav id="navbar" class="flex flex-col w-screen h-32 fixed bg-neutral-200 bg-opacity-40 drop-shadow-xl items-left md:items-center md:flex-row sm:py-10 md:justify-between backdrop-blur-xl z-50">
+    <div class="flex justify-between items-center pl-12">
         <div class="font-montserrat font-bold text-lg mt-12 sm:mt-0 lg:text-2xl text-left transform transition ease-in-out hover:scale-110 hover:-translate-y-1">
             <a href="#landing" class="self-center">Jaime González</a>
         </div>
@@ -45,7 +45,7 @@
             </button>
         </div>
     </div>
-    <div id="navMenu" class="hidden h-screen md:h-auto w-full md:w-auto md:block mt-[52px] md:mt-0 bg-neutral-200 bg-opacity-40 md:bg-opacity-0 justify-center align-middle items-center sm:mr-5 backdrop-blur-xl md:backdrop-blur-none">
+    <div id="navMenu" class="hidden justify-start h-screen md:h-auto w-screen py-10 md:w-auto md:block mt-[52px] md:mt-0 bg-neutral-200 bg-opacity-40 md:bg-opacity-0 align-middle items-center sm:mr-5 backdrop-blur-xl md:backdrop-blur-none z-50">
         <ul id="navLinks" class="flex flex-col space-y-4 md:space-y-0 text-center items-center leading-9 md:flex-row">
             <li class="profile px-5">
                 <a href="#profile" class="hover:border-b-4 hover:border-b-blue-800">Profile</a>
@@ -64,7 +64,7 @@
             </li>
         </ul>
     </div>
-    <div class="hidden md:block">
+    <div class="hidden md:block pr-12">
         <a href="https://www.linkedin.com/in/gonzalezjaime" target="_blank">
             <i class="fa-brands fa-linkedin fa-2xl"></i>
         </a>
@@ -411,15 +411,15 @@
         <!--beginning of contact section-->
         <section id="contact" class="bg-white bg-opacity-50 z-0">
             <div class="mt-20 flex flex-col justify-start items-center gap-8 h-screen mx-5 sm:mx-7 md:mx-10 lg:mx-40 xl:mx-96">
-                <div class="flex flex-col justify-start items-start">
+                <div class="flex flex-col justify-center items-center sm:items-start">
                     <h1 class="text-gray-800 font-bold font-montserrat text-4xl text-center mb-10">Let's Collaborate!</h1>
-                    <p class="text-gray-800 font-inter text-xl font-normal w-fit">
+                    <p class="text-gray-800 font-inter text-xl font-normal w-full">
                         Whether you need a <span class="text-blue-800 ">tailored software solution</span> <span class="text-blue-800 font-bold">strategic consultation</span>, or are scouting <span class="text-blue-800 font-bold">talent for your company</span>, I'm here to help. Reach out, and let's start a conversation.
                     </p>
                 </div>
-                <div id="form-container" class="flex flex-row align-baseline mt-10 space-y-12">
-                    <form action="script.js" class="flex flex-col justify-between">
-                        <div class="flex flex-row gap-x-10">
+                <div id="form-container" class="flex flex-row w-full justify-center mt-10 space-y-12">
+                    <form action="script.js" class="flex flex-col w-full sm:w-auto justify-between">
+                        <div class="flex flex-col w-full justify-center sm:flex-row  gap-x-10">
                             <div class="flex flex-col gap-y-4 my-5">
                                 <div class="flex flex-col">
                                     <label for="fullName" class="block text-sm font-medium leading-6 text-gray-900">Full Name</label>
@@ -440,36 +440,37 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="h-full border border-gray-300"></div>
-                            <div class="flex flex-col gap-4 mt-10">
-                                <div class="flex items-center gap-x-3 radio-option">
-                                    <input type="radio" name="contactReason" id="contactReason1" value="softwareSolution" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
-                                    <label for="contactReason1" class="block text-sm font-medium leading-6 text-gray-900">Software Solution</label>
+                            <div class="h-full border border-gray-300 mt-5"></div>
+                            <div class="items-center sm:items-start">
+                                <div class="flex flex-col items-start sm:items-start gap-4 mt-10">
+                                    <div class="flex items-start gap-x-3 radio-option">
+                                        <input type="radio" name="contactReason" id="contactReason1" value="softwareSolution" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
+                                        <label for="contactReason1" class="block text-sm font-medium leading-6 text-gray-900">Software Solution</label>
+                                    </div>
+                                    <span class="text-xs text-gray-500 font-normal leading-none indent-7">Custom software or tech solutions</span>
+                                    <div class="flex items-start gap-x-3 radio-option">
+                                        <input type="radio" name="contactReason" id="contactReason2" value="consultingService" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
+                                        <label for="contactReason2" class="block text-sm font-medium leading-6 text-gray-900">Consulting service</label>
+                                    </div>
+                                    <span class="text-xs text-gray-500 font-normal leading-none indent-7">Consulting service for projects or businesses</span>
+                                    <div class="flex items-start gap-x-3 radio-option">
+                                        <input type="radio" name="contactReason" id="contactReason3" value="otherReason" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
+                                        <label for="contactReason3" class="block text-sm font-medium leading-6 text-gray-900">Other reasons</label>
+                                    </div>
+                                    <span class="text-xs text-gray-500 font-normal leading-none indent-7">Other reasons for contact</span>
                                 </div>
-                                <span class="text-xs text-gray-500 font-normal leading-none indent-7">Custom software or tech solutions</span>
-                                <div class="flex items-center gap-x-3 radio-option">
-                                    <input type="radio" name="contactReason" id="contactReason2" value="consultingService" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
-                                    <label for="contactReason2" class="block text-sm font-medium leading-6 text-gray-900">Consulting service</label>
-                                </div>
-                                <span class="text-xs text-gray-500 font-normal leading-none indent-7">Consulting service for projects or businesses</span>
-                                <div class="flex items-center gap-x-3 radio-option">
-                                    <input type="radio" name="contactReason" id="contactReason3" value="otherReason" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
-                                    <label for="contactReason3" class="block text-sm font-medium leading-6 text-gray-900">Other reasons</label>
-                                </div>
-                                <span class="text-xs text-gray-500 font-normal leading-none indent-7">Other reasons for contact</span>
                             </div>
                         </div>
-                        <div class="flex flex-col w-full">
+                        <div class="flex flex-col w-full mt-10">
                             <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Message</label>
                             <div class="flex h-full rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 bg-white focus-within:ring-inset focus-within:ring-blue-700">
                                 <textarea type="text" name="message" id="message" placeholder="" rows="5" class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-blue-800 focus:ring-0 sm:text-sm sm:leading-6"></textarea>
                             </div>
 
                         </div>
-                        <div class="mt-5 flex items-center justify-end gap-x-6">
-                            <button class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-                            <button class="rounded-md bg-blue-800 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-60">
-                                Save
+                        <div class="mt-5 flex flex-col sm:flex-row w-full sm:w-auto items-center justify-end gap-y-3 sm:gap-x-6">
+                            <button class="w-full sm:w-auto bg-blue-800 rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-60">
+                                Send!
                             </button>
                         </div>
                     </form>
