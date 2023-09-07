@@ -9,7 +9,7 @@ terraform {
   backend "remote" {
     organization = "gray-beard"
     workspaces {
-        name = "dev"
+      name = "dev"
     }
   }
 }
@@ -20,13 +20,13 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias = "east"
+  alias  = "east"
   region = "us-east-1"
 }
 
 # create s3 bucket
 resource "aws_s3_bucket" "portfolio" {
-  bucket = "portfolio-jaimegonzalez-tech"
+  bucket        = "portfolio-jaimegonzalez-tech"
   force_destroy = true
 
   tags = {
@@ -55,9 +55,9 @@ resource "aws_s3_bucket_policy" "public_read" {
 
 # create s3 bucket object
 resource "aws_s3_object" "portfolio" {
-  bucket = aws_s3_bucket.portfolio.id
-  key    = "index.html"
-  source = "index.html"
+  bucket       = aws_s3_bucket.portfolio.id
+  key          = "index.html"
+  source       = "index.html"
   content_type = "text/html"
 
   depends_on = [
@@ -96,8 +96,8 @@ resource "aws_route53_record" "portfolio" {
   zone_id = aws_route53_zone.main.zone_id
 
   alias {
-    name = aws_cloudfront_distribution.cfd.domain_name
-    zone_id = aws_cloudfront_distribution.cfd.hosted_zone_id
+    name                   = aws_cloudfront_distribution.cfd.domain_name
+    zone_id                = aws_cloudfront_distribution.cfd.hosted_zone_id
     evaluate_target_health = false
   }
 }
@@ -126,15 +126,15 @@ resource "aws_cloudfront_distribution" "cfd" {
     aws_acm_certificate.cert,
   ]
 
-  enabled = true
-  is_ipv6_enabled = true
-  comment = "CDN for portfolio bucket"
+  enabled             = true
+  is_ipv6_enabled     = true
+  comment             = "CDN for portfolio bucket"
   default_root_object = "index.html"
 
   default_cache_behavior {
-    allowed_methods        = ["GET", "HEAD"]
-    cached_methods         = ["GET", "HEAD"]
-    target_origin_id       = "S3Origin"
+    allowed_methods  = ["GET", "HEAD"]
+    cached_methods   = ["GET", "HEAD"]
+    target_origin_id = "S3Origin"
 
     forwarded_values {
       query_string = false
@@ -144,9 +144,9 @@ resource "aws_cloudfront_distribution" "cfd" {
     }
     # force HTTPS
     viewer_protocol_policy = "redirect-to-https"
-    min_ttl = 0
-    default_ttl = 3600
-    max_ttl = 86400
+    min_ttl                = 0
+    default_ttl            = 3600
+    max_ttl                = 86400
   }
 
   restrictions {
@@ -158,15 +158,15 @@ resource "aws_cloudfront_distribution" "cfd" {
   # reference acm cert and ssl support method
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate.cert.arn
-    ssl_support_method = "sni-only"
+    ssl_support_method  = "sni-only"
   }
 }
 
 # create certificate for cloudfront
 resource "aws_acm_certificate" "cert" {
-  domain_name = "www.jaimegonzalez.tech"
+  domain_name       = "www.jaimegonzalez.tech"
   validation_method = "DNS"
-  provider = aws.east
+  provider          = aws.east
   lifecycle {
     create_before_destroy = true
   }
@@ -174,17 +174,17 @@ resource "aws_acm_certificate" "cert" {
 
 # automate certificate validation
 resource "aws_route53_record" "cert_validation" {
-  name = local.domain_validation[0].resource_record_name
-  type = local.domain_validation[0].resource_record_type
+  name    = local.domain_validation[0].resource_record_name
+  type    = local.domain_validation[0].resource_record_type
   zone_id = aws_route53_zone.main.zone_id
   records = [local.domain_validation[0].resource_record_value]
-  ttl = 60
+  ttl     = 60
 }
 
 # complete validation
 resource "aws_acm_certificate_validation" "cert" {
-  provider = aws.east
-  certificate_arn = aws_acm_certificate.cert.arn
+  provider                = aws.east
+  certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = [aws_route53_record.cert_validation.fqdn]
 }
 
