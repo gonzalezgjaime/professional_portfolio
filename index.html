@@ -45,7 +45,7 @@
             </button>
         </div>
     </div>
-    <div id="navMenu" class="hidden justify-start h-screen md:h-auto w-screen py-10 md:w-auto md:block mt-[52px] md:mt-0 bg-neutral-200 bg-opacity-40 md:bg-opacity-0 align-middle items-center sm:mr-5 backdrop-blur-xl md:backdrop-blur-none z-50">
+    <div id="navMenu" class="hidden justify-start h-screen md:h-auto w-screen py-10 md:w-auto md:flex md:flex-col mt-[52px] md:mt-0 bg-neutral-200 bg-opacity-40 md:bg-opacity-0 align-middle items-center sm:mr-5 backdrop-blur-xl md:backdrop-blur-none z-50">
         <ul id="navLinks" class="flex flex-col space-y-4 md:space-y-0 text-center items-center leading-9 md:flex-row">
             <li class="profile px-5">
                 <a href="#profile" class="hover:border-b-4 hover:border-b-blue-800">Profile</a>
@@ -418,7 +418,7 @@
                     </p>
                 </div>
                 <div id="form-container" class="flex flex-row w-full justify-center mt-10 space-y-12">
-                    <form action="script.js" class="flex flex-col w-full sm:w-auto justify-between">
+                    <form id="contactForm" class="flex flex-col w-full sm:w-auto justify-between">
                         <div class="flex flex-col w-full justify-center sm:flex-row  gap-x-10">
                             <div class="flex flex-col gap-y-4 my-5">
                                 <div class="flex flex-col">
@@ -442,22 +442,22 @@
                             </div>
                             <div class="h-full border border-gray-300 mt-5"></div>
                             <div class="items-center sm:items-start">
-                                <div class="flex flex-col items-start sm:items-start gap-4 mt-10">
+                                <div id="reasons" class="flex flex-col items-start sm:items-start gap-4 mt-10">
                                     <div class="flex items-start gap-x-3 radio-option">
-                                        <input type="radio" name="contactReason" id="contactReason1" value="softwareSolution" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
-                                        <label for="contactReason1" class="block text-sm font-medium leading-6 text-gray-900">Software Solution</label>
+                                        <input type="radio" name="reason" id="software" value="softwareSolution" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800 reason"/>
+                                        <label for="software" class="block text-sm font-medium leading-6 text-gray-900">Software Solution</label>
                                     </div>
                                     <span class="text-xs text-gray-500 font-normal leading-none indent-7">Custom software or tech solutions</span>
                                     <div class="flex items-start gap-x-3 radio-option">
-                                        <input type="radio" name="contactReason" id="contactReason2" value="consultingService" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
-                                        <label for="contactReason2" class="block text-sm font-medium leading-6 text-gray-900">Consulting service</label>
+                                        <input type="radio" name="reason" id="consulting" value="consultingService" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800 reason"/>
+                                        <label for="consulting" class="block text-sm font-medium leading-6 text-gray-900">Consulting service</label>
                                     </div>
                                     <span class="text-xs text-gray-500 font-normal leading-none indent-7">Consulting service for projects or businesses</span>
                                     <div class="flex items-start gap-x-3 radio-option">
-                                        <input type="radio" name="contactReason" id="contactReason3" value="otherReason" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800"/>
-                                        <label for="contactReason3" class="block text-sm font-medium leading-6 text-gray-900">Other reasons</label>
+                                        <input type="radio" name="reason" id="employment" value="otherReason" class="h-4 w-4 border-gray-300 text-blue-800 focus:ring-blue-800 reason"/>
+                                        <label for="employment" class="block text-sm font-medium leading-6 text-gray-900">Employment</label>
                                     </div>
-                                    <span class="text-xs text-gray-500 font-normal leading-none indent-7">Other reasons for contact</span>
+                                    <span class="text-xs text-gray-500 font-normal leading-none indent-7">Head hunters looking to interview</span>
                                 </div>
                             </div>
                         </div>
@@ -500,6 +500,7 @@
         </footer>
     </main>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script defer src="script.js"></script>
 </body>
 <!--end of body and content sections-->

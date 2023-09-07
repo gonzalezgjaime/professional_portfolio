@@ -11,6 +11,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="smtp" level="application" />
+    <orderEntry type="library" name="e00310bf4a" level="application" />
     <orderEntry type="library" name="bundle" level="application" />
     <orderEntry type="library" name="e00310bf4a" level="application" />
   </component>

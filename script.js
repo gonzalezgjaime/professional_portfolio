@@ -24,7 +24,6 @@ const sections = document.querySelectorAll('section');
 navLinks.forEach((link, i) => {
     link.addEventListener('click', function () {
         activeMenu(i);
-        mobileMenu.classList.toggle('hidden');
     });
 });
 
@@ -414,7 +413,6 @@ const projectDetails = {
     },
 }
 // check cards for click event and render modal with appropriate details
-console.log(projects);
 projects.forEach(project => {
     project.addEventListener('click', function () {
        if (projectDetails.hasOwnProperty(project.id)) {
@@ -446,3 +444,40 @@ document.addEventListener('mousedown', function (e) {
         modal.classList.add('hidden');
     }
 });
+
+// function to send contact form info via email using EmailJS & gmail personal account
+(function() {
+    // https://dashboard.emailjs.com/admin/account
+    emailjs.init('rVR89QCzAgwW0ruDs');
+})();
+
+const contactForm = document.getElementById('contactForm');
+window.onload = function() {
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // validate all fields are filled out
+        if (this.fullName.value && this.email && this.phoneNumber && this.message && this.reason) {
+            // validate email convention using regex
+            if (isValidEmail(this.email.value)) {
+                emailjs.sendForm('gmail', 'template_sekp0xt', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        contactForm.reset();
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+                window.alert('Message sent successfully!');
+            } else {
+                window.alert('Please enter a valid email address.');
+            }
+        } else {
+            window.alert('Please fill out all fields.');
+        }
+
+    });
+}
+
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
