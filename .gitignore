@@ -1,1 +1,21 @@
+# exclude node_modules directory
 node_modules
+
+# Terraform .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Terraform .tfvars files, which might contain secret data
+*.tfvars
+
+# Terraform plan files
+*.tfplan
+
+# Terraform crash log files
+crash.log
+
+# .terraform directory which contains plugins and other state
+.terraform/
+
+# ignore all the idea files and folders
+.idea/
