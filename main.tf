@@ -14,7 +14,7 @@ terraform {
   }
 }
 
-# define provider and region
+# define provider aws secrets and region
 provider "aws" {
   region     = var.region
   access_key = var.AWS_ACCESS_KEY_ID
