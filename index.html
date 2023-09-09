@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--Provide fonts via g-fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
 <nav id="navbar" class="flex flex-col w-screen h-32 fixed bg-neutral-200 bg-opacity-40 drop-shadow-xl items-left md:items-center md:flex-row sm:py-10 md:justify-between backdrop-blur-xl z-50">
     <div class="flex justify-between items-center pl-12">
         <div class="font-montserrat font-bold text-lg mt-12 sm:mt-0 lg:text-2xl text-left transform transition ease-in-out hover:scale-110 hover:-translate-y-1">
-            <a href="#landing" class="self-center">Jaime González</a>
+            <a href="#landing" class="self-center" aria-label="text-logo">Jaime González</a>
         </div>
 
         <div class="absolute inset-y-0 right-6 flex items-center md:hidden">
@@ -48,19 +48,19 @@
     <div id="navMenu" class="hidden justify-start h-screen md:h-auto w-screen py-10 md:w-auto md:flex md:flex-col mt-[52px] md:mt-0 bg-neutral-200 bg-opacity-40 md:bg-opacity-0 align-middle items-center sm:mr-5 backdrop-blur-xl md:backdrop-blur-none z-50">
         <ul id="navLinks" class="flex flex-col space-y-4 md:space-y-0 text-center items-center leading-9 md:flex-row">
             <li class="profile px-5">
-                <a href="#profile" class="hover:border-b-4 hover:border-b-blue-800">Profile</a>
+                <a href="#profile" class="hover:border-b-4 hover:border-b-blue-800" aria-label="Link to the profile section">Profile</a>
             </li>
             <li class="process px-5">
-                <a href="#process" class="hover:border-b-4 hover:border-b-blue-800">Process</a>
+                <a href="#process" class="hover:border-b-4 hover:border-b-blue-800" aria-label="Link to the thought process section">Process</a>
             </li>
             <li class="resume px-5">
-                <a href="#resume" class="hover:border-b-4 hover:border-b-blue-800">Resume</a>
+                <a href="#resume" class="hover:border-b-4 hover:border-b-blue-800" aria-label="Link to the resume section">Resume</a>
             </li>
             <li class="projects px-5">
-                <a href="#projects" class="hover:border-b-4 hover:border-b-blue-800">Projects</a>
+                <a href="#projects" class="hover:border-b-4 hover:border-b-blue-800" aria-label="Link to the projects section">Projects</a>
             </li>
             <li class="contact px-5">
-                <a href="#contact" class="hover:border-b-4 hover:border-b-blue-800">Contact</a>
+                <a href="#contact" class="hover:border-b-4 hover:border-b-blue-800" aria-label="Link to the contact section">Contact</a>
             </li>
         </ul>
     </div>
