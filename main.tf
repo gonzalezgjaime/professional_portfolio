@@ -170,6 +170,7 @@ resource "aws_cloudfront_distribution" "cfd" {
 # create certificate for cloudfront
 resource "aws_acm_certificate" "cert" {
   domain_name       = "www.jaimegonzalez.tech"
+  subject_alternative_names = ["jaimegonzalez.tech"]
   validation_method = "DNS"
   provider          = aws.east
   lifecycle {
@@ -179,10 +180,12 @@ resource "aws_acm_certificate" "cert" {
 
 # automate certificate validation
 resource "aws_route53_record" "cert_validation" {
-  name    = local.domain_validation[0].resource_record_name
-  type    = local.domain_validation[0].resource_record_type
+  for_each = local.domain_validation
+
+  name    = each.value.resource_record_name
+  type    = each.value.resource_record_type
   zone_id = aws_route53_zone.main.zone_id
-  records = [local.domain_validation[0].resource_record_value]
+  records = [each.value.resource_record_value]
   ttl     = 60
 }
 
@@ -190,7 +193,7 @@ resource "aws_route53_record" "cert_validation" {
 resource "aws_acm_certificate_validation" "cert" {
   provider                = aws.east
   certificate_arn         = aws_acm_certificate.cert.arn
-  validation_record_fqdns = [aws_route53_record.cert_validation.fqdn]
+  validation_record_fqdns = values(aws_route53_record.cert_validation)[*].fqdn
 }
 
 
