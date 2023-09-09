@@ -169,10 +169,10 @@ resource "aws_cloudfront_distribution" "cfd" {
 
 # create certificate for cloudfront
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "www.jaimegonzalez.tech"
+  domain_name               = "www.jaimegonzalez.tech"
   subject_alternative_names = ["jaimegonzalez.tech"]
-  validation_method = "DNS"
-  provider          = aws.east
+  validation_method         = "DNS"
+  provider                  = aws.east
   lifecycle {
     create_before_destroy = true
   }

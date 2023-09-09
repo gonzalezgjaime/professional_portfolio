@@ -18,7 +18,7 @@ variable "AWS_SECRET_ACCESS_KEY" {
 # convert domain_validation_options to a list in order to access
 locals {
   domains = {
-    "jaimegonzalez.tech" = {},
+    "jaimegonzalez.tech"     = {},
     "www.jaimegonzalez.tech" = {}
   }
 
