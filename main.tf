@@ -16,13 +16,14 @@ terraform {
   }
 }
 
-# define provider aws secrets and region
+# define provider aws secrets and region. Infra will be setup in us-west-2 except for acm cert
 provider "aws" {
   region     = var.region
   access_key = var.AWS_ACCESS_KEY_ID
   secret_key = var.AWS_SECRET_ACCESS_KEY
 }
 
+// define provider for us-east-1 to use with acm cert provisioning
 provider "aws" {
   alias  = "east"
   region = "us-east-1"
@@ -122,7 +123,7 @@ resource "aws_cloudfront_distribution" "cfd" {
   }
 
   # define aliases for cloudfront required to access site using www.jaimegonzalez.tech
-  aliases = ["www.jaimegonzalez.tech"]
+  aliases = ["www.jaimegonzalez.tech", "jaimegonzalez.tech"]
 
   # define cloudfront dependencies
   depends_on = [

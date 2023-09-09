@@ -16,17 +16,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 });
 
-// set active navlink on click
+// vars for active navlink
 const navLinks = document.querySelectorAll('#navLinks a');
 const sections = document.querySelectorAll('section');
-// console.log(sections);
 
+
+// close mobile menu when user clicks outside of it
+document.addEventListener('click', function(e) {
+    const clickedNavMenu = e.composedPath().includes(mobileMenu.target);
+    const clickedButton = button.contains(e.target);
+    if (!clickedNavMenu && !clickedButton && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        button.children[2].classList.toggle('hidden');
+        button.children[3].classList.toggle('hidden');
+    }
+})
+
+// close mobile menu when user clicks on a link
 navLinks.forEach((link, i) => {
     link.addEventListener('click', function () {
         activeMenu(i);
+        mobileMenu.classList.add('hidden');
+        button.children[2].classList.toggle('hidden');
+        button.children[3].classList.toggle('hidden');
     });
 });
 
+// function to set the active navlink
 function activeMenu(i) {
     navLinks.forEach((link, id) => {
         if (id === i) {
@@ -63,6 +79,7 @@ button.addEventListener('click', function () {
     mobileMenu.classList.toggle('hidden');
     mobileMenu.classList.toggle('flex');
     mobileMenu.classList.toggle('flex-col');
+
     // change mobile menu icon on click
     button.children[2].classList.toggle('hidden');
     button.children[3].classList.toggle('hidden');
@@ -162,7 +179,7 @@ function toggleThoughts(thought) {
 
 }
 
-// function to toggle resume experience details
+// vars for resume timeline
 const resumeTimeline = document.querySelectorAll('#resume-timeline .date');
 const title = document.querySelector('#resume-content #title');
 const subTitle = document.querySelector('#resume-content #subTitle');
@@ -362,7 +379,7 @@ const resume = {
     },
 }
 
-// console.log(resumeTimeline);
+// function to toggle resume experience details
 function toggleExperience () {
     resumeTimeline.forEach((date, i) => {
         date.addEventListener('mouseover', function () {
@@ -438,6 +455,7 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
+// close modal if user clicks out
 document.addEventListener('mousedown', function (e) {
     let clickedInside = e.composedPath().includes(modalContainer);
     if (!clickedInside) {
