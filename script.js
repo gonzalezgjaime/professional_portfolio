@@ -419,16 +419,18 @@ const projectDetails = {
     card1: {
         title: 'Professional Portfolio',
         detail: `
-            <p>My approach with this website was to mainly encapsulate my professional journey, not as a simple Resume, but as an interactive concise, but comprehensive redaction of my experience, at the same time showcasing my hands on skills, in a tangible, usable product. Aside from the main objective, I also include the GitHub repository link with the full source code.</p> <br>
+            <p>My approach with this website was to mainly encapsulate my professional journey, not as a simple Resume, but as an interactive concise, but comprehensive redaction of my experience, at the same time showcasing my hands on skills, in a tangible, usable product. Aside from the main objective, I also include the GitHub repository link with the full source code.</p><br>
+            
+            As my other showcased projects are work in progress, I have taken extra steps to include a deployment scenario in this project. This will provide viewers with a full SDLC presentation.
         `,
     },
     card2: {
-        title: 'SaaS Mfg Ops Management',
+        title: 'SaaS Mfg Ops Management - work in progress',
         detail: "Imagine the power of merging the capabilities of titans like Amazon and Shopify into a singular, cohesive tool. That's precisely what this platform offers. But its prowess isn't confined to mere integration; it’s a symphony of streamlined operations. From the granular aspects of inventory management, where each item is tracked and accounted for, to the vast realm of production processes, ensuring quality and timeliness—every step is refined. Add to this the layered complexities of order management, where every client interaction, transaction, and fulfillment process is overseen with unparalleled attention to detail. It’s not just a tool; it's an operational revolution.",
     },
     card3: {
-        title: 'E-commerce Solution',
-        detail: "Welcome to an e-commerce platform that believes in harmonizing form with function. While its visual appeal captivates users with sleek, intuitive designs, the underlying technology propels them into an advanced digital marketplace. This isn't just about buying and selling; it’s about experiencing commerce in its finest form. Seamless integrations with powerhouses like Amazon and Shopify open doors to vast markets, while the platform’s proprietary features enhance user navigation, product discovery, and transaction efficiency. The end goal? To not just facilitate sales but to amplify the user's journey, making every interaction meaningful, swift, and rewarding.",
+        title: 'ToDo App - work in progress',
+        detail: "App built in rails to manage tasks, with user authentication, and CRUD operations. This app is still in development, but the core functionality is already in place. I'm currently working on the UI/UX, as well as the deployment scenario.",
     },
 }
 // check cards for click event and render modal with appropriate details

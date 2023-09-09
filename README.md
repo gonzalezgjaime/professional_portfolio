@@ -1,7 +1,8 @@
 # Professional Portfolio
 Welcome to the repository for my Professional Portfolio. This isn't just a resume — it's an interactive encapsulation of my tech journey. By browsing the source, you'll see not just where I've been, but how I approach problems and solutions.
 
-![portfolio-screenshot.gif](images%2Fportfolio-screenshot.gif)
+![portfolio-screenshot.gif](images/portfolio-screenshot.gif)
+
 ## Design & Components
 ### Philosophy
 I decided to build this website, using a single page, smooth scroll approach. Focusing the User on the content, by keeping the navigation / interaction intuitive.
@@ -19,6 +20,10 @@ DOM manipulation, some effects, mobile menu, button and the smooth scroll are al
 
 ### 2. Back End
 In terms of the website, there is no operating back end. Any data that is displayed dynamically, is defined in JavaScript objects, and rendered to the DOM.
+
+I used email.js to handle the contact form. This is a simple, yet powerful tool, that allows you to send emails from your website, without the need for a back end.
+
+https://www.emailjs.com
 
 ### 3. Deployment (IaC)
 Although this is a static website, and this is probably overkill, I decided to package deployment in the following way:
