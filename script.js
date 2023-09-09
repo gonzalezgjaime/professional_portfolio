@@ -163,10 +163,10 @@ const titles = {
 };
 
 const texts = {
-    1: 'Crucial phase before embarking any technological transformation. Empathically understanding the business, core concepts and processes, information flows, and the people involved; are pillars of a successful approach to any project. These concepts and abstractions are then translated into clear quantifiable and measurable objectives.',
-    2: 'Once the objectives are clear, the strategy is defined. This is the phase where the solution is designed, the technologies are selected, and the project is planned. The strategy is the roadmap to the solution.',
-    3: 'The design phase is where the solution is materialized. The solution is designed, developed, and tested. The solution is then deployed and the users are trained. The solution is then monitored and maintained.',
-    4: 'The design phase is where the solution is materialized. The solution is designed, developed, and tested. The solution is then deployed and the users are trained. The solution is then monitored and maintained.'
+    1: 'Crucial phase before embarking on any technological transformation. Empathetically understanding the business, core concepts, process\', information flows, and the people involved; are pillars of a successful approach to any project. These concepts and abstractions are then translated into clear quantifiable and measurable objectives.',
+    2: 'With a comprehensive understanding of our processes and their intrinsic operations, we can effectively define priorities, abstractions, and modularity. These elements coalesce into a concise roadmap that equips the team to navigate changes with flexibility and agility.',
+    3: 'Having segmented and strategized, our strategy provides the framework for the design phase. It includes essential concepts like process flows, information flows, data models, and user stories. These notions are subsequently transformed into wireframes, mockups, and prototypes. Crucially, all these design representations undergo thorough reviews and receive approval from stakeholders before any development commences.',
+    4: 'After meticulous and strategic planning, we\'re poised to construct the solution. This phase is characterized by its iterations. At the conclusion of each iteration (for instance, a Sprint in SCRUM or Agile), we deploy the developed functionality to production. This not only offers immediate value to the business but also furnishes us with the flexibility to adapt; a common necessity in real-world projects. We repeat this process until every module is deployed, culminating in a comprehensive solution.'
 };
 
 // function to toggle thought details based on clicked/hovered thought
@@ -417,8 +417,10 @@ const closeBtn = document.querySelector('#close');
 // create objects for project details
 const projectDetails = {
     card1: {
-        title: 'Personal Portfolio',
-        detail: "Within this snapshot lies not just a linear progression of my career, but the challenges, learnings, and victories that have sculpted my professional landscape. My story is more than a timeline; it’s a living, breathing narrative. As you navigate through, you'll encounter three meticulously crafted live demos—each serving as a cornerstone moment in my professional evolution. These are not merely projects but manifestations of my skills, determination, and innovation. By interacting with them, you gain firsthand insight into the caliber of my work, the challenges I've embraced, and the results I've achieved.",
+        title: 'Professional Portfolio',
+        detail: `
+            <p>My approach with this website was to mainly encapsulate my professional journey, not as a simple Resume, but as an interactive concise, but comprehensive redaction of my experience, at the same time showcasing my hands on skills, in a tangible, usable product. Aside from the main objective, I also include the GitHub repository link with the full source code.</p> <br>
+        `,
     },
     card2: {
         title: 'SaaS Mfg Ops Management',
@@ -441,8 +443,8 @@ projects.forEach(project => {
 
 function toggleModal(title, content) {
     modal.classList.toggle('hidden');
-    modalTitle.innerText = title;
-    modalContent.innerText = content;
+    modalTitle.innerHTML = title;
+    modalContent.innerHTML = content;
 }
 
 closeBtn.addEventListener('click', function () {

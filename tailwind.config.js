@@ -2,10 +2,14 @@
 module.exports = {
   content: ["./**/*.{html,js}"],
   theme: {
-    extend: {},
-    fontFamily: {
-      'montserrat': ['Montserrat', 'sans-serif'],
-      'inter': ['Inter', 'sans-serif'],
+    extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+      },
+      backgroundImage: {
+        'resume': "url('/images/resume-bg.svg')",
+      }
     },
   },
   plugins: [
