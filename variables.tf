@@ -21,9 +21,4 @@ locals {
     "jaimegonzalez.tech"     = {},
     "www.jaimegonzalez.tech" = {}
   }
-
-  # convert domain_validation_options to a list in order to access
-  domain_validation = {
-    for dvo in aws_acm_certificate.cert.domain_validation_options : dvo.domain_name => dvo
-  }
 }

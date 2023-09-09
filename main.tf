@@ -89,16 +89,22 @@ resource "aws_s3_bucket_versioning" "portfolio" {
   }
 }
 
-# create hosted zone for jaimegonzalez.tech
-resource "aws_route53_zone" "main" {
-  name = "www.jaimegonzalez.tech"
+data "aws_route53_zone" "main" {
+  name         = "jaimegonzalez.tech"
+  private_zone = false
 }
+
+
+# create hosted zone for jaimegonzalez.tech
+#resource "aws_route53_zone" "main" {
+#  name = "www.jaimegonzalez.tech"
+#}
 
 # create A record for jaimegonzalez.tech
 resource "aws_route53_record" "portfolio" {
   name    = "www.jaimegonzalez.tech"
   type    = "A"
-  zone_id = aws_route53_zone.main.zone_id
+  zone_id = data.aws_route53_zone.main.zone_id
 
   alias {
     name                   = aws_cloudfront_distribution.cfd.domain_name
@@ -123,12 +129,12 @@ resource "aws_cloudfront_distribution" "cfd" {
   }
 
   # define aliases for cloudfront required to access site using www.jaimegonzalez.tech
-  aliases = ["www.jaimegonzalez.tech", "jaimegonzalez.tech"]
+  aliases = ["jaimegonzalez.tech", "www.jaimegonzalez.tech"]
 
   # define cloudfront dependencies
   depends_on = [
     aws_s3_bucket.portfolio,
-    aws_acm_certificate.cert,
+    data.aws_acm_certificate.cert,
   ]
 
   enabled             = true
@@ -162,39 +168,14 @@ resource "aws_cloudfront_distribution" "cfd" {
 
   # reference acm cert and ssl support method
   viewer_certificate {
-    acm_certificate_arn = aws_acm_certificate.cert.arn
+    acm_certificate_arn = data.aws_acm_certificate.cert.arn
     ssl_support_method  = "sni-only"
   }
 }
 
-# create certificate for cloudfront
-resource "aws_acm_certificate" "cert" {
-  domain_name               = "www.jaimegonzalez.tech"
-  subject_alternative_names = ["jaimegonzalez.tech"]
-  validation_method         = "DNS"
-  provider                  = aws.east
-  lifecycle {
-    create_before_destroy = true
-  }
+data "aws_acm_certificate" "cert" {
+  domain   = "jaimegonzalez.tech"
+  statuses = ["ISSUED"]
+  provider = aws.east
 }
-
-# automate certificate validation
-resource "aws_route53_record" "cert_validation" {
-  for_each = local.domain_validation
-
-  name    = each.value.resource_record_name
-  type    = each.value.resource_record_type
-  zone_id = aws_route53_zone.main.zone_id
-  records = [each.value.resource_record_value]
-  ttl     = 60
-}
-
-# complete validation
-resource "aws_acm_certificate_validation" "cert" {
-  provider                = aws.east
-  certificate_arn         = aws_acm_certificate.cert.arn
-  validation_record_fqdns = values(aws_route53_record.cert_validation)[*].fqdn
-}
-
-
 
